@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Crime in Seattle (2022)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- include google web fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web|Oswald" rel="stylesheet">
+    <!-- include icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/c3.min.css">
+    <!-- include c3.js to make charts. c3.js is built upon d3.js -->
+    <script src="js/d3.js"></script>
+    <script src="js/c3.min.js"></script>
+</head>
+
+<body>
+    <!-- sidebar -->
+    <div id="info">
+        <div id="title">
+            Crimes in Seattle (2022 - Present)
+            <span><a href="https://twitter.com/UW" target="_blank"><i class="bi bi-twitter"></i></a></span>
+            <span><a href="\" target="_blank"><i class="bi bi-github"></i></a></span>
+            <span id="reset"><a href="#">reset</a></span>
+        </div>
+        <div id="count" class="card">
+            <h5 id="desc"> Top 10 nieghborhoods with the highest number of crimes reported</h5>
+            <p id="crime-count"></p>
+        </div>
+        <div id="crime-chart"></div>
+
+        <div id="footer">
+            <p>
+                Seattle, a city home to a large tech industry, with Microsoft and Amazon headquartered in its
+                metropolitan
+                area. However, the streets of Seattle may not be safe as one might think. With a crime rate of 66 per
+                one
+                thousand residents, Seattle has one of the highest crime rates in all of America compared to other
+                cities.
+                Here in rainy city, one's chance of becoming a victim of either violent or property crime here is one in
+                15.
+            </p>
+            <p>
+                The data is displayed as a choropleth map because the original dataset contained the individual points (crime
+                reports), including their latitude and longitutde of where they were reported. Since the data
+                visualization was not easy to observe as individual points on the map, so I found a
+                <a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/SeattleCityGIS::neighborhood-map-atlas-neighborhoods/explore?location=47.677875%2C-122.323620%2C14.35">dataset</a>
+                 containing neighborhoods in Seattle and spatially joined them before calculating the total number of
+                crime reports within each neighborhood. There two main data visualization components of the map are:
+                <ul>
+                    <li>bar chart</li>
+                    <li>dynamic visualization that appears when the user clicks on a neighborhood of Seattle</li>
+                </ul>
+            </p>
+
+            <p>
+                <h3>Acknowledgments:</h3>
+                <ul>
+                    <li>One crime report can contain multiple offenses</li>
+                    <li>Dataset only contains crimes reported to and recorded by Seattle Police</li>
+                    <li>For more information on definitions and classifications, please visit <a href="https://www.fbi.gov/services/cjis/ucr/nibrs">this website</a></li>
+                    <li>These inforgraphics were made using Mapbox Studio and and were implemented in JS</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+    
+    <div id="map"></div>
+    <div id="legend"></div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
