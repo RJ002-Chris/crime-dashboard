@@ -5,6 +5,7 @@ This project is a prototype to the final version of the Smart Dashbaord to visua
 
 #### (2022 - rpesent) Seattle Crime Report Data
 ![Seattle Crime Choropleth Map](img\choroplethMap.png)
+- Webmap can be accessed [here](https://rj002-chris.github.io/crime-dashboard/)
 
 For this topic, I chose to display the data as a choropleth map because the original dataset contained the individual points (crime reports), including their latitude and longitutde of where they were reported. Since the data visualization was not easy to observe as individual points on the map, so I found a [dataset](https://data-seattlecitygis.opendata.arcgis.com/datasets/SeattleCityGIS::neighborhood-map-atlas-neighborhoods/explore?location=47.677875%2C-122.323620%2C14.35) containing neighborhoods in Seattle and spatially joined them before calculating the total number of crime reports within each neighborhood. There are also two data visualization components:
 - bar chart
